@@ -4,7 +4,7 @@ class SpriteKind:
 
 def on_on_overlap(sprite, otherSprite):
     global Ammo
-    ammo_box.destroy()
+    otherSprite.destroy()
     Ammo += 5
     music.power_up.play()
 sprites.on_overlap(SpriteKind.player, SpriteKind.crate, on_on_overlap)
@@ -178,12 +178,12 @@ def on_on_overlap4(sprite, otherSprite):
     info.change_life_by(-1)
 sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_on_overlap4)
 
+ammo_box: Sprite = None
 Pizza: Sprite = None
 Spawn_location = 0
 mySprite: Sprite = None
 projectile: Sprite = None
 Appearance = 0
-ammo_box: Sprite = None
 Dude: Sprite = None
 Ammo = 0
 scene.set_background_color(11)
