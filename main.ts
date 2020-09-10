@@ -2,7 +2,7 @@ namespace SpriteKind {
     export const crate = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.crate, function (sprite, otherSprite) {
-    ammo_box.destroy()
+    otherSprite.destroy()
     Ammo += 5
     music.powerUp.play()
 })
@@ -162,12 +162,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     music.powerDown.play()
     info.changeLifeBy(-1)
 })
+let ammo_box: Sprite = null
 let Pizza: Sprite = null
 let Spawn_location = 0
 let mySprite: Sprite = null
 let projectile: Sprite = null
 let Appearance = 0
-let ammo_box: Sprite = null
 let Dude: Sprite = null
 let Ammo = 0
 scene.setBackgroundColor(11)
